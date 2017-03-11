@@ -8,6 +8,7 @@ package com.nearsoft.basics
 
 import com.nearsoft.categories.FeedReaderGroovy
 import com.nearsoft.categories.FeedReaderJava
+import groovy.time.TimeCategory
 
 List feeds = ["http://www.booklender.com/rss/NewReleasesBooks.xml",
               "http://www.booklender.com/blog/feed/"]
@@ -22,4 +23,13 @@ use(FeedReaderJava){
     printEntries(books)
     printEntries(blogs)
 }
+
+use(TimeCategory)  {
+    println 1.minute.from.now
+    println 10.hours.ago
+
+    def someDate = new Date()
+    println someDate - 3.months
+}
+
 
