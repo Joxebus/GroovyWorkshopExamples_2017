@@ -1,5 +1,10 @@
 package com.nearsoft.beans
 
+import groovy.transform.Canonical
+import groovy.transform.ToString
+
+@Canonical
+@ToString(excludes = 'entries')
 class Feed {
 
     String title;

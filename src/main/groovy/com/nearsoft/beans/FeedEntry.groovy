@@ -1,8 +1,10 @@
 package com.nearsoft.beans
 
-import groovy.transform.CompileStatic
+import groovy.transform.Canonical
+import groovy.transform.ToString
 
-@CompileStatic
+@Canonical
+@ToString(excludes = ['link', 'description'])
 class FeedEntry {
     String title;
     String author;

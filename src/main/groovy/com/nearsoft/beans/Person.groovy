@@ -1,8 +1,11 @@
 package com.nearsoft.beans
 
+import groovy.transform.Canonical
+
 /**
  * This class use a validtation with regex for telephone number
  */
+@Canonical
 class Person {
     String name
     int age
@@ -14,6 +17,4 @@ class Person {
             throw new RuntimeException("$phoneNumber has an invalid format ###-###-####")
         }
     }
-
-    String toString(){ name +' has '+(age?:'confidential')+' with phone number '+ (phone?:'confidential')}
 }

@@ -9,44 +9,35 @@ class FeedReaderSpec extends Specification {
                   "http://www.booklender.com/blog/feed/"]
 
 
-    def "Test Java Book Reader"() {
+    def "Test Java Book/Blog Reader"() {
         when:
-        String url = feeds[0]
-        def books = FeedReaderJava.readBookFeed(url)
+        String url1 = feeds[0]
+        String url2 = feeds[1]
+
+        def books = FeedReaderJava.readBookFeed(url1)
+        def blogEntries = FeedReaderJava.readBlogFeed(url2)
 
         then:
         !books.isEmpty()
         books.size() == 40
+        !blogEntries.isEmpty()
+        blogEntries.size() == 10
+
     }
 
-    def "Test Groovy Book Reader"() {
+    def "Test Groovy Book/Blog Reader"() {
         when:
-        String url = feeds[0]
-        def books = FeedReaderGroovy.readBookFeed(url)
+        String url1 = feeds[0]
+        String url2 = feeds[1]
+
+        def books = FeedReaderGroovy.readBookFeed(url1)
+        def blogEntries = FeedReaderGroovy.readBlogFeed(url2)
 
         then:
         !books.isEmpty()
         books.size() == 40
-    }
-
-    def "Test Java Blog Reader"() {
-        when:
-        String url = feeds[1]
-        def blogs = FeedReaderJava.readBlogFeed(url)
-
-        then:
-        !blogs.isEmpty()
-        blogs.size() == 10
-    }
-
-    def "Test Groovy Bolg Reader"() {
-        when:
-        String url = feeds[1]
-        def blogs = FeedReaderGroovy.readBlogFeed(url)
-
-        then:
-        !blogs.isEmpty()
-        blogs.size() == 10
+        !blogEntries.isEmpty()
+        blogEntries.size() == 10
     }
 
 }

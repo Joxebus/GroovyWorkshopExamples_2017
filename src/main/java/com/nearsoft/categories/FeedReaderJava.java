@@ -156,7 +156,7 @@ public class FeedReaderJava {
     private static Book feedEntryToBook(FeedEntry entry) throws ParseException {
         Book book = new Book();
         book.setTitle(entry.getTitle());
-        book.setAuthor(entry.getAuthor());
+        book.setAuthor(entry.getAuthor() != null ? entry.getAuthor() : entry.getTitle().split(" - by ")[1]);
         book.setLink(entry.getLink());
         book.setPubDate(pubDateFormatter.parse(entry.getPubDate()));
         return book;

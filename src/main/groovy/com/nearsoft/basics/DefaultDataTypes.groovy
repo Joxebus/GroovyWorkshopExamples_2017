@@ -13,6 +13,8 @@ def elements = [1,                          // java.lang.Integer
             11111111111,                    // java.lang.Long
             11111111111111111111,           // java.math.BigInteger
             0.1,                            // java.math.BigDecimal
+            0..5,                           // groovy.lang.IntRange
+            'x'..'p',                       // groovy.lang.ObjectRange
             "Normal String",                // java.lang.String
             'Another normal String',        // java.lang.String
             "GString with value $name",     // groovy.lang.GString

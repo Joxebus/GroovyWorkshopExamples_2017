@@ -1,4 +1,8 @@
 package com.nearsoft.basics
+/**
+ * This is an example of different ways to write or use a loop
+ * with Groovy.
+ */
 
 // Closure with no arguments
 def separator = {  println "\n ${'*'*30}" }
