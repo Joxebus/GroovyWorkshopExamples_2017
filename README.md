@@ -11,7 +11,7 @@ This repo contains examples for **Groovy** language, from basic to advance, the 
   - Categories
   - etc...
 
-# Tech
+## Tech
 
   - Groovy 2.4.6
   - Java 1.8
