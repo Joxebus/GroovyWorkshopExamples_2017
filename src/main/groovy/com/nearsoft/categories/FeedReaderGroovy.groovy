@@ -3,9 +3,6 @@ package com.nearsoft.categories
 import com.nearsoft.beans.Blog
 import com.nearsoft.beans.Book
 
-import java.text.DateFormat
-import java.text.SimpleDateFormat
-
 class FeedReaderGroovy {
 
     static String FORMAT = "EEE, dd MMM yyyy HH:mm:ss zzz";

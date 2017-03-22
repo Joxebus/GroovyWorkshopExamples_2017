@@ -2,6 +2,8 @@ package com.nearsoft.test
 
 import com.nearsoft.beans.Feed
 import com.nearsoft.beans.FeedEntry
+import com.nearsoft.categories.ExtractUrlFromText
+import com.nearsoft.categories.FileReaderCategory
 import spock.lang.Specification
 
 /**
@@ -68,4 +70,25 @@ class MiscellaneousSpec extends Specification {
         'Title 3'  | 'Author 3' | 'http://link3.com'| 'Description 3'   | new Date().toString()
         'Title 4'  | 'Author 4' | 'http://link4.com'| 'Description 4'   | new Date().toString()
     }
+
+
+    def "Test URL finder on text"(){
+        setup:
+        String someText = "This text is an example go to http://github.com/Joxebus for more examples and don't forget to visit http://nearsoft.com"
+
+        when:
+        List urls = []
+        use(ExtractUrlFromText){
+            urls = someText.getUrlsFromText()
+        }
+        println urls
+
+        then:
+        urls.size() == 2
+        urls.contains('http://github.com/Joxebus')
+        urls.contains('http://nearsoft.com')
+
+    }
+
+
 }
