@@ -20,7 +20,7 @@ class FileReaderCategorySpec extends Specification {
             content = 'lorem.txt'.getContent(SRC)
         }
         then:
-        content.size() > 0
+        content.size() == 0
         content.contains('pharetra elit')
         content.startsWith('Lorem')
     }
