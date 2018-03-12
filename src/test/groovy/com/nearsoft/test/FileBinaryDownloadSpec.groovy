@@ -40,4 +40,11 @@ public class FileBinaryDownloadSpec extends Specification{
         'example3'  |   'http://i.imgur.com/kPkvetw.jpg'
 
     }
+
+    def cleanupSpec(){
+        def src = new File('src/test/resources/tmp')
+        if(src.exists()){
+            src.deleteDir()
+        }
+    }
 }

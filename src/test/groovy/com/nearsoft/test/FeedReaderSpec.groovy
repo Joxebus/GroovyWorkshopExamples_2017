@@ -19,7 +19,7 @@ class FeedReaderSpec extends Specification {
 
         then:
         !books.isEmpty()
-        books.size() == 41
+        books.size() == 40
         !blogEntries.isEmpty()
         blogEntries.size() == 10
 
@@ -35,7 +35,7 @@ class FeedReaderSpec extends Specification {
 
         then:
         !books.isEmpty()
-        books.size() == 41
+        books.size() == 40
         !blogEntries.isEmpty()
         blogEntries.size() == 10
     }
